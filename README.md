@@ -2,24 +2,25 @@
 
 ## Providing HttpClient Service Reference in app.module
 
-Step1: Include HttpClient Module Provided by angular4
+## Step1: Include HttpClient Module Provided by angular4
 
-## Import statement for HttpClientModule
+=> Import statement for HttpClientModule
 import { HttpClientModule } from '@angular/common/http';
 
-## Specify Module name in providers
+=> Specify Module name in providers
 providers: [HttpClientModule]
 
-Step2: Include HttpClient Wrapper
+## Step2: Include HttpClient Wrapper
 
-## Specify HttpClient Wrapper reference in providers
+=> Specify HttpClient Wrapper reference in providers
+
 providers:[HttpClientModule, HttpWrapperService]
 
 Note:"Please include import statement according to the location of wrapper."
 
-Step3: Include ErrorHandler Service for Http Requests.
+## Step3: Include ErrorHandler Service for Http Requests.
 
-## Specify Error Handler service reference in providers
+=> Specify Error Handler service reference in providers
 
 providers:[HttpClientModule, HttpWrapperService, HttpErrorHandlerService]
 
