@@ -8,13 +8,38 @@
 import { HttpClientModule } from '@angular/common/http';
 
 => Specify Module name in providers
-providers: [HttpClientModule]
+
+Example:
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {HttpWrapperService} from "./HttpWrapper/http-wrapper.service";
+import {HttpClientModule} from "@angular/common/http";
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
 ## Step2: Include HttpClient Wrapper
 
 => Specify HttpClient Wrapper reference in providers
 
-providers:[HttpClientModule, HttpWrapperService]
+providers:[HttpWrapperService]
 
 Note:"Please include import statement according to the location of wrapper."
 
@@ -22,7 +47,7 @@ Note:"Please include import statement according to the location of wrapper."
 
 => Specify Error Handler service reference in providers
 
-providers:[HttpClientModule, HttpWrapperService, HttpErrorHandlerService]
+providers:[HttpWrapperService, HttpErrorHandlerService]
 
 ## To Include Oauth Interceptor in app.module
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
