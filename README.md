@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 Example:
 
-import { BrowserModule } from '@angular/platform-browser';
+`import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -32,7 +32,7 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
+})`
 export class AppModule { }
 
 ## Step2: Include HttpClient Wrapper
@@ -50,13 +50,13 @@ Note:"Please include import statement according to the location of wrapper."
 providers:[HttpWrapperService, HttpErrorHandlerService]
 
 ## To Include Oauth Interceptor in app.module
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+`import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  }]
+  }]`
 
 Note: can be used to send Oauth Access Token on every API request.
 
@@ -76,24 +76,24 @@ Note: can be used to send Oauth Access Token on every API request.
 
 ## Get Example
 
-'this.httpWrapper.get(URL, OPTIONS);'
+`this.httpWrapper.get(URL, OPTIONS);`
 Example:
-'this.httpWrapper.get("https://example.com/getData", {headers:headers,params:params});'
+`this.httpWrapper.get("https://example.com/getData", {headers:headers,params:params});`
 
 ## Post Example
 
-'this.httpWrapper.post(URL, OPTIONS);'
+`this.httpWrapper.post(URL, OPTIONS);`
 Example:
-'this.httpWrapper.post("https://example.com/getData", {headers:headers,params:params, body:body});'
+`this.httpWrapper.post("https://example.com/getData", {headers:headers,params:params, body:body});`
 
 ## Put Example
 
-'this.httpWrapper.put(URL, OPTIONS);'
+`this.httpWrapper.put(URL, OPTIONS);`
 Example:
-'this.httpWrapper.put("https://example.com/getData", {headers:headers,params:params, body:body});'
+`this.httpWrapper.put("https://example.com/getData", {headers:headers,params:params, body:body});`
 
 ## Delete Example
 
-'this.httpWrapper.delete(URL, OPTIONS);'
+`this.httpWrapper.delete(URL, OPTIONS);`
 Example:
-'this.httpWrapper.delete("https://example.com/getData", {headers:headers,params:params, body:body});'
+`this.httpWrapper.delete("https://example.com/getData", {headers:headers,params:params, body:body});`
