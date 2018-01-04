@@ -11,35 +11,35 @@ import { HttpClientModule } from '@angular/common/http';
 
 Example:
 
-`import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+`import { BrowserModule } from '@angular/platform-browser';`
+`import { NgModule } from '@angular/core';`
 
-import { AppComponent } from './app.component';
-import {CommonModule} from "@angular/common";
-import {FormsModule} from "@angular/forms";
-import {HttpWrapperService} from "./HttpWrapper/http-wrapper.service";
-import {HttpClientModule} from "@angular/common/http";
+`import { AppComponent } from './app.component';`
+`import {CommonModule} from "@angular/common";`
+`import {FormsModule} from "@angular/forms";`
+`import {HttpWrapperService} from "./HttpWrapper/http-wrapper.service";`
+`import {HttpClientModule} from "@angular/common/http";`
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})`
-export class AppModule { }
+`@NgModule({`
+`  declarations: [`
+`    AppComponent`
+`  ],`
+`  imports: [`
+`    BrowserModule,`
+`    CommonModule,`
+`    FormsModule,`
+`    HttpClientModule,`
+`  ],
+`  providers: [],`
+`  bootstrap: [AppComponent]`
+`})`
+`export class AppModule { }`
 
 ## Step2: Include HttpClient Wrapper
 
 => Specify HttpClient Wrapper reference in providers
 
-providers:[HttpWrapperService]
+`providers:[HttpWrapperService]`
 
 Note:"Please include import statement according to the location of wrapper."
 
@@ -47,16 +47,16 @@ Note:"Please include import statement according to the location of wrapper."
 
 => Specify Error Handler service reference in providers
 
-providers:[HttpWrapperService, HttpErrorHandlerService]
+`providers:[HttpWrapperService, HttpErrorHandlerService]`
 
 ## To Include Oauth Interceptor in app.module
-`import { HTTP_INTERCEPTORS } from '@angular/common/http';
+`import { HTTP_INTERCEPTORS } from '@angular/common/http';`
 
-providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  }]`
+`providers: [{`
+`    provide: HTTP_INTERCEPTORS,`
+`    useClass: AuthInterceptor,`
+`    multi: true`
+`  }]`
 
 Note: can be used to send Oauth Access Token on every API request.
 
@@ -64,15 +64,15 @@ Note: can be used to send Oauth Access Token on every API request.
 
 ## To Set Headers
 
-`let headers = new HttpHeaders();
- headers = headers.append("HeaderName", "HeaderValue");
- headers = headers.append("HeaderName", "HeaderValue");`
+`let headers = new HttpHeaders();`
+` headers = headers.append("HeaderName", "HeaderValue");`
+` headers = headers.append("HeaderName", "HeaderValue");`
 
 ## To Set Params
 
-` let params = new HttpParams();
-  params = params.append("ParamName", "ParamValue");
-  params = params.append("ParamName", "ParamValue");`
+`let params = new HttpParams();`
+`params = params.append("ParamName", "ParamValue");`
+`params = params.append("ParamName", "ParamValue");`
 
 ## Get Example
 
