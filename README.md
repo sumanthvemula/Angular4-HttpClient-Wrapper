@@ -50,10 +50,11 @@ Note:"Please include import statement according to the location of wrapper."
 
 ## To Include Oauth Interceptor in app.module
 `import { HTTP_INTERCEPTORS } from '@angular/common/http';`
+`import {AuthInterceptorService} from "./HttpWrapper/auth-interceptor.service";`
 
 `providers: [{`
 `    provide: HTTP_INTERCEPTORS,`
-`    useClass: AuthInterceptor,`
+`    useClass: AuthInterceptorService,`
 `    multi: true`
 `  }]`
 
