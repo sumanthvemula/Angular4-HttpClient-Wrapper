@@ -7,32 +7,52 @@
 => Import statement for HttpClientModule
 import { HttpClientModule } from '@angular/common/http';
 
-=> Specify Module name in providers
+=> Specify Module name in app.modules[imports].
 
 Example:
 
 `import { BrowserModule } from '@angular/platform-browser';`
+
 `import { NgModule } from '@angular/core';`
+
 `import { AppComponent } from './app.component';`
+
 `import {CommonModule} from "@angular/common";`
+
 `import {FormsModule} from "@angular/forms";`
+
 `import {HttpWrapperService} from "./HttpWrapper/http-wrapper.service";`
+
 `import {HttpClientModule} from "@angular/common/http";`
 
 `@NgModule({`
+
 `  declarations: [`
+
 `    AppComponent`
+
 `  ],`
+
 `  imports: [`
+
 `    BrowserModule,`
+
 `    CommonModule,`
+
 `    FormsModule,`
+
 `    HttpClientModule,`
+
 `  ],`
+
 `  providers: [],`
+
 `  bootstrap: [AppComponent]`
+
 `})`
+
 `export class AppModule { }`
+
 
 ## Step2: Include HttpClient Wrapper
 
