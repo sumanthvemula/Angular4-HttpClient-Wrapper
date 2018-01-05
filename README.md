@@ -38,63 +38,67 @@ export class AppModule { }
 ## Step2: Include HttpClient Wrapper
 
 => Specify HttpClient Wrapper reference in providers
-
-`providers:[HttpWrapperService]`
-
+```
+providers:[HttpWrapperService]
+```
 Note:"Please include import statement according to the location of wrapper."
 
 ## Step3: Include ErrorHandler Service for Http Requests.
 
 => Specify Error Handler service reference in providers
-
-`providers:[HttpWrapperService, HttpErrorHandlerService]`
-
+```
+providers:[HttpWrapperService, HttpErrorHandlerService]
+```
 ## To Include Oauth Interceptor in app.module
-`import { HTTP_INTERCEPTORS } from '@angular/common/http';`
-`import {AuthInterceptorService} from "./HttpWrapper/auth-interceptor.service";`
+```
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthInterceptorService} from "./HttpWrapper/auth-interceptor.service";
 
-`providers: [{`
-`    provide: HTTP_INTERCEPTORS,`
-`    useClass: AuthInterceptorService,`
-`    multi: true`
-`  }]`
-
+providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }]
+```
 Note: can be used to send Oauth Access Token on every API request.
 
 # HttpClient Wrapper Usage
 
 ## To Set Headers
-
-`let headers = new HttpHeaders();`
-` headers = headers.append("HeaderName", "HeaderValue");`
-` headers = headers.append("HeaderName", "HeaderValue");`
-
+```
+let headers = new HttpHeaders();
+headers = headers.append("HeaderName", "HeaderValue");
+headers = headers.append("HeaderName", "HeaderValue");
+```
 ## To Set Params
-
-`let params = new HttpParams();`
-`params = params.append("ParamName", "ParamValue");`
-`params = params.append("ParamName", "ParamValue");`
-
+```
+let params = new HttpParams();
+params = params.append("ParamName", "ParamValue");
+params = params.append("ParamName", "ParamValue");
+```
 ## Get Example
-
-`this.httpWrapper.get(URL, OPTIONS);`
+```
+this.httpWrapper.get(URL, OPTIONS);
 Example:
-`this.httpWrapper.get("https://example.com/getData", {headers:headers,params:params});`
-
+this.httpWrapper.get("https://example.com/getData", {headers:headers,params:params});
+```
 ## Post Example
-
-`this.httpWrapper.post(URL, OPTIONS);`
+```
+this.httpWrapper.post(URL, OPTIONS);
 Example:
-`this.httpWrapper.post("https://example.com/getData", {headers:headers,params:params, body:body});`
-
+this.httpWrapper.post("https://example.com/getData", {headers:headers,params:params, body:body});
+```
 ## Put Example
-
-`this.httpWrapper.put(URL, OPTIONS);`
+```
+this.httpWrapper.put(URL, OPTIONS);
 Example:
-`this.httpWrapper.put("https://example.com/getData", {headers:headers,params:params, body:body});`
-
+this.httpWrapper.put("https://example.com/getData", {headers:headers,params:params, body:body});
+```
 ## Delete Example
-
-`this.httpWrapper.delete(URL, OPTIONS);`
+```
+this.httpWrapper.delete(URL, OPTIONS);
+```
 Example:
-`this.httpWrapper.delete("https://example.com/getData", {headers:headers,params:params, body:body});`
+```
+this.httpWrapper.delete("https://example.com/getData", {headers:headers,params:params, body:body});
+```
