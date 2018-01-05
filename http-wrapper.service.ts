@@ -1,10 +1,7 @@
 import {Injectable} from "@angular/core";
 import "rxjs/add/operator/catch";
 import {Headers, Http, RequestMethod, RequestOptionsArgs, RequestOptions, Request, Response} from "@angular/http";
-import {Cookie} from "ng2-cookies";
 import {Router} from "@angular/router";
-import {ToastsManager} from "ng2-toastr";
-import {GlobalState} from "../global.state";
 import {Observable} from "rxjs/Observable";
 import {HttpClient, HttpParams, HttpRequest} from "@angular/common/http";
 import {HttpErrorHandlerService} from "./http-error-handling.service";
@@ -45,9 +42,6 @@ export class HttpWrapperService {
                         switch(error.status) {
                             case 403:
                                 observer.complete();
-                                break;
-                            case 401:
-                                this.errorHandlingSerivce.handle401(true);
                                 break;
                             default:
                                 observer.error(error);
